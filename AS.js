@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 function AlexaSkill(appID)
@@ -13,36 +11,31 @@ SSML:'SSML'
 }
 
 AlexaSkill.prototype.requestHandlers = {
-LAunchRequest:function(event,content,response)
+LaunchRequest:function(event,content,response)
 {
 this.eventHandlers.onLaunch.call(this, event.request, event.session, response);
 },
 IntentRequest: function(event,context,response)
 {
-this.eventHandlers.onIntend.call(this,event.request, event.session, response);
+this.eventHandlers.onIntend.call(this, event.request, event.session, response);
 },
 SessionEndedRequest: function (event, context)
 {
-this.eventHandlers.onSessionEnded(event.request, venet.session);
+this.eventHandlers.onSessionEnded(event.request, event.session);
 context.succeed();
 }
 };
 
-
 AlexaSkill.prototype.eventHandlers = {
-
 onSessionStarted: function (sessionStartedRequest, session)
 {
 },
 
 onLaunch: fuction(LaunchRequest, session, response)
-
 {
 },
 
-
-
-onLaunch: fuction(LaunchRequest, session, response)
+  onLaunch: fuction(LaunchRequest, session, response)
 {
 throw"onLaunch should be overriden by subclasss";
 }'
@@ -75,7 +68,7 @@ try
 {
 console.log("Session applicationID:"+event.session.application.applucationID);
 
-if(this._appID&&event.session.application.applicationID!==this._appID)
+if(this._appID && event.session.application.applicationID!==this._appID)
 {
 console.log("The apllicationIDs dont match:"+event.session.application.applicationID+this,_appId);
 throw "Invalid applicationID";
@@ -97,7 +90,7 @@ console.log("Unexpected exception"+e);
 context.fail(e);
 }
 };
-var Respose = function(context,session)
+var Response = function(context,session)
 {
 this._context = context;
 this._session = session;
@@ -121,10 +114,8 @@ text: optionsParam.speech || optionsParam
 }
 }
 
-
 Response.prototype = (fuction()
 {
-
 var buildSpeechletResponse = fuction (options)
 {
 var alexaResponse = {
