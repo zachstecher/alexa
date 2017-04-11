@@ -69,7 +69,7 @@ console.log("MQTT Error", + data);
 }
 else
 {
-speechOutput = "Turning Raspberry on now.";
+speechOutput = "Turning RaspberryPi on now.";
 console.log(data);
 response.tell(speechOutput);
 //callback(sessionAttributes,buildSpeechletRespnse(intent.name,speechOutput,repromptText)
@@ -124,8 +124,8 @@ exports.handler = function (event, context)
 
 // creating an instance of the HelloWorld Skill.
 
-var helloWorld = new HelloWorld();
-helloWorld.execute(event,context);
+var Hello = new Hello();
+Hello.execute(event,context);
 };
 
 
