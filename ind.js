@@ -65,7 +65,7 @@ if (err)
 {
 //Handle the error here
 
-console.log(MQTT Error" + data);
+console.log("MQTT Error", + data);
 }
 else
 {
