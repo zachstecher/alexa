@@ -108,7 +108,7 @@ ssml: optionsParam.speech
 }else
 {
 return{
-type: optionsParam.type ||"PlainText',
+type: optionsParam.type ||"PlainText",
 text: optionsParam.speech || optionsParam
 }
 }
