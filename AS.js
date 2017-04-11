@@ -38,7 +38,7 @@ onLaunch: fuction(LaunchRequest, session, response)
   onLaunch: fuction(LaunchRequest, session, response)
 {
 throw"onLaunch should be overriden by subclasss";
-}'
+},
 
 onIntent:function(intentRequest,session,response)
 {
